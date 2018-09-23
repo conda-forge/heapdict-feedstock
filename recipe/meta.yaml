@@ -10,7 +10,7 @@ source:
     sha256: 4c8e581f1651ca78da35820fc80b0d50fc060032517f2c7efd9169e204db3793
 
 build:
-    number: 0
+    number: 1000
     script: python setup.py install  # [not py2k]
     script: python setup.py install --single-version-externally-managed --record record.txt  # [py2k]
 requirements:
