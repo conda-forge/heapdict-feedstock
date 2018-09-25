@@ -3,11 +3,11 @@ About heapdict
 
 Home: http://stutzbachenterprises.com/
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A Heap MutableMapping.
+Summary: A Heap MutableMapping
 
 
 
