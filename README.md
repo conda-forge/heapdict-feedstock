@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About heapdict
 ==============
 
@@ -11,16 +7,24 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A Heap MutableMapping
+Summary: A heap with decrease-key and increase-key operations
 
+heapdict implements the MutableMapping ABC, meaning it works pretty much
+like a regular Python dict. It's designed to be used as a priority queue.
 
 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/heapdict-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/heapdict-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/heapdict-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/heapdict-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/heapdict-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/heapdict-feedstock/branch/master)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=415&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/heapdict-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
