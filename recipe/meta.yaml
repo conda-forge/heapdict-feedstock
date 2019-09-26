@@ -1,3 +1,4 @@
+{% set name = "HeapDict" %}
 {% set version = "1.0.1" %}
 
 package:
@@ -5,11 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/DanielStutzbach/heapdict/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8495f57b3e03d8e46d5f1b2cc62ca881aca392fd5cc048dc0aa2e1a6d23ecdb6
 
 build:
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
