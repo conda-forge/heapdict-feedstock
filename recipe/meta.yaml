@@ -1,28 +1,27 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
-    name: heapdict
-    version: {{ version }}
+  name: heapdict
+  version: {{ version }}
 
 source:
-    fn: heapdict-{{ version }}.tar.gz
-    url: https://github.com/DanielStutzbach/heapdict/archive/v{{ version }}.tar.gz
-    sha256: 4c8e581f1651ca78da35820fc80b0d50fc060032517f2c7efd9169e204db3793
+  url: https://github.com/DanielStutzbach/heapdict/archive/v{{ version }}.tar.gz
+  sha256: 8495f57b3e03d8e46d5f1b2cc62ca881aca392fd5cc048dc0aa2e1a6d23ecdb6
 
 build:
-    number: 2
-    script: python setup.py install  # [not py2k]
-    script: python setup.py install --single-version-externally-managed --record record.txt  # [py2k]
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
 requirements:
-    host:
-        - python
-        - setuptools  # [py2k]
-    run:
-        - python
+  build:
+    - python
+    - pip
+  run:
+    - python
 
 test:
-    imports:
-        - heapdict
+  imports:
+    - heapdict
 
 about:
     home: http://stutzbachenterprises.com/
@@ -38,6 +37,6 @@ about:
     dev_url: https://github.com/DanielStutzbach/heapdict
 
 extra:
-    recipe-maintainers:
-        - mrocklin
-        - ocefpaf
+  recipe-maintainers:
+    - mrocklin
+    - ocefpaf
