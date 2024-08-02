@@ -2,28 +2,32 @@
 {% set version = "1.0.1" %}
 
 package:
-  name: heapdict
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/HeapDict-{{ version }}.tar.gz
   sha256: 8495f57b3e03d8e46d5f1b2cc62ca881aca392fd5cc048dc0aa2e1a6d23ecdb6
 
 build:
-  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
 
 test:
   imports:
     - heapdict
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
     home: http://stutzbachenterprises.com/
